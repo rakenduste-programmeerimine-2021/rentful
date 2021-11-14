@@ -35,3 +35,32 @@ Adminid saavad autosid lisada rentimiseks, autosid nimekirjast maha võtta, uusi
 - E Maili teavitused auto broneerimise, rentimise alustamise ja rentimise lõpetamise kohta. Lisaks ka teavitus, kui auto rentimiseks andmise taotlus on kas vastu võetud või tagasi lükatud.
 
 ## Wireframes:
+
+### 1. Avaleht:
+
+![Avaleht](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Avaleht.png)
+
+### 2. Auto täpsemad andmed:
+
+![Car1](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Car1.png)
+
+![Car2](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Car2.png)
+
+### 3. Auto rentimiseks lisamise taotluse form:
+
+![Form](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Form.png)
+
+### 4. Autode nimekiri:
+![List](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/List.png)
+
+### 5. Alamenüü:
+![Sub menu](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Sub%20menu.png)
+
+### 6. Broneerimine/Rentimine:
+![Payment](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Payment.png)
+
+### 7. Sisse logimine:
+![Log in](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/Log%20in.png)
+
+### 8. Registreerimine:
+![Sign up](https://github.com/rakenduste-programmeerimine-2021/rentful/blob/main/wireframe/sign%20up.png)
