@@ -4,7 +4,8 @@
 Autode rentimise veebisait
 
 ## Autorid:
-Taavi Vestel, Raimond Laatspera
+• Taavi Vestel
+• Raimond Laatspera
 
 ## Lühikirjeldus:
 Autode rentimise veebisait kus on võimalik teiste inimeste autosid rentida ning ka ise oma autot pakkuda rendiks. Inimene saab ilma sisse logimata sirvida autode nimekirja ning kui ta leiab midagi, mis talle meeldib, saab ta teha broneeringu väikese ettemakse näol. Broneeringu tegemiseks on vaja sisse logida või kasutaja teha. Kui broneering on tehtud, siis saab klient minna platsile kus auto on ning kohapeal viimase vormistuse teha. 
@@ -14,19 +15,19 @@ Auto broneerimiseks peab inimene kasutaja tegema või sisse logima. Peale sisse 
 Adminid saavad autosid lisada rentimiseks, autosid nimekirjast maha võtta, uusi teavitusi teha ning auto omanikega vajadusel suhelda. 
 
 ## Kasutatavad tehnoloogiad:
-React
-MongoDB
-Node.js
+• React
+• MongoDB
+• Node.js
 
 ## Funktsionaalsused:
-Registreerimine, sisselogimine
-Autode broneerimine makse meetodil kasutajana
-Autode rentimiseks esitamise taotlus
-Administraatori kasutaja
-Administraatori poolne autode lisamine ja kustutamine nimekirja
-Administraatori ligipääs taotlustele auto rentimiseks.
-Administraatori poolne rentimise perioodi alustus ja lõpetamine
-Administraatori suhtlus auto omanikuga ja rentnikuga
-E Maili teavitused auto broneerimise, rentimise alustamise ja rentimise lõpetamise kohta. Lisaks ka teavitus, kui auto rentimiseks andmise taotlus on kas vastu võetud või tagasi lükatud.
+• Registreerimine, sisselogimine
+• Autode broneerimine makse meetodil kasutajana
+• Autode rentimiseks esitamise taotlus
+• Administraatori kasutaja
+• Administraatori poolne autode lisamine ja kustutamine nimekirja
+• Administraatori ligipääs taotlustele auto rentimiseks.
+• Administraatori poolne rentimise perioodi alustus ja lõpetamine
+• Administraatori suhtlus auto omanikuga ja rentnikuga
+• E Maili teavitused auto broneerimise, rentimise alustamise ja rentimise lõpetamise kohta. Lisaks ka teavitus, kui auto rentimiseks andmise taotlus on kas vastu võetud või tagasi lükatud.
 
 ## Wireframes
