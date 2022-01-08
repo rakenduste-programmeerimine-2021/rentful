@@ -5,8 +5,7 @@ import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 
-import { BrowserRouter as Router, Route, Link, Switch, Redirect}
-        from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom";
 
 const App = () => {
   const user = true;

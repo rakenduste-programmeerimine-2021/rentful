@@ -17,7 +17,7 @@ const Products = ({category, filters, sort}) => { //Siit algab andmete Fetchimin
     useEffect(() => {
         const getProducts = async ()=>{
             try{
-                const res = await axios.get("http://localhost:5000/Backend/products?mark=BMW");
+                const res = await axios.get( category ? `http://localhost:5000/Backend/productList?category=${category}` : "http://localhost:5000/Backend/products" );
                 console.log(res)
             }catch(err){}
         };
