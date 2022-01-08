@@ -1,5 +1,5 @@
 import  styled  from "styled-components";
-
+import {Link} from "react-router-dom";
 
 const Container = styled.div`
 flex: 1;
@@ -40,11 +40,13 @@ font-weight: 600;
 const CategoryItem = ({item}) => {
     return (
         <Container>
-            <Image src={item.img}/>
-            <Info>
-                <Title>{item.title}</Title>
-                <Button>RENT</Button>
-            </Info>
+            <Link to={`/productList/${item.mark}`}>
+                <Image src={item.img}/>
+                <Info>
+                    <Title>{item.title}</Title>
+                    <Button>RENT</Button>
+                </Info>
+            </Link>
         </Container>
     )
 }

@@ -4,7 +4,8 @@ import Announcement from "../components/Announcement"
 import Products from "../components/Products"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
-
+import { useLocation } from "react-router-dom";
+import React, { useState } from 'react';
 const Container = styled.div`
 
 `;
@@ -32,8 +33,24 @@ const Option = styled.option`
 
 `;
 
-
+//Saame omale automargi
 const ProductList = () => {
+    const location = useLocation();
+    const category = location.pathname.split("/")[2]
+    const [filters, setFilters] = useState({}) // filtrite loomine
+    const [sort, setSort] = useState("newest")
+
+
+    const selectFilters =  (e) =>{
+        const value = e.target.value;
+        setFilters({
+            ...filters, //See rida on oluline, et mitu filtrit saaksid korraga töötada. Seda nimetatakse "Spread operatoriks", mille eesmärk on hoida kõiki elemente Arrays
+            [e.target.name]: value,
+        
+        });
+    };
+
+    console.log(filters);
     return (
         <Container>
             <Navbar/>
@@ -42,14 +59,14 @@ const ProductList = () => {
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Cars</FilterText>
-                    <Select>
-                        <Option disabled selected>Make</Option>
+                    <Select name="mark" onChange={selectFilters}>
+                        <Option disabled>Make</Option>
                         <Option>BMW</Option>
                         <Option>Mercedes-Benz</Option>
                         <Option>Toyota</Option>
                     </Select>
-                    <Select>
-                        <Option disabled selected>Year</Option>
+                    <Select name="year" onChange={selectFilters}>
+                        <Option disabled>Year</Option>
                         <Option>2010</Option>
                         <Option>2015</Option>
                         <Option>2020</Option>
@@ -59,15 +76,15 @@ const ProductList = () => {
                 
                 </Filter>
                 <Filter><FilterText>Sort Cars</FilterText>
-                <Select>
-                    <Option selected>Newest</Option>
-                    <Option>Price (asc)</Option>
-                    <Option>Price (desc)</Option>
+                <Select onChange = {e => setSort(e.target.value)}>
+                    <Option value = "newest">Newest</Option>
+                    <Option value = "cheapest">Price (asc)</Option>
+                    <Option value = "expensive">Price (desc)</Option>
                 </Select>
                 
                 </Filter>
             </FilterContainer>
-            <Products/>
+            <Products category = {category} filters = {filters} sort={sort}/>
             <Newsletter/>
             <Footer/>
         </Container>

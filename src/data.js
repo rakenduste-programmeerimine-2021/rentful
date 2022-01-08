@@ -26,19 +26,20 @@ export const categories = [
         id: 1,
         img: "https://cdn.pixabay.com/photo/2017/04/27/03/22/bwm-5-2264279__340.jpg",
         title: "BMW",
+        mark: "BMW",
         
     },
     {
         id: 2,
         img: "https://cdn.pixabay.com/photo/2015/07/11/23/13/mercedes-benz-841465_1280.jpg",
         title: "Mercedes-Benz",
-       
+        mark: "Benz",
     },
     {
         id: 3,
         img: "https://cdn.pixabay.com/photo/2021/10/29/12/25/toyota-gr-yaris-6751755_1280.jpg",
         title: "Toyota",
-        
+        mark: "Toyota",
     }
 ]
 

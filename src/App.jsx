@@ -5,27 +5,41 @@ import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 
-import { render } from "react-dom";
-import { BrowserRouter as Router, Route, Link, Routes, Navigate} //Uues versioonis ei ole enam "Switch", vaid "Routes"
+import { BrowserRouter as Router, Route, Link, Switch, Redirect}
         from "react-router-dom";
 
-//Route'id on samuti umber tehtud
 const App = () => {
   const user = true;
   return (
     <Router>  
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route path="/Cart" element={<Cart/>} />
+        <Switch>
 
-          <Route path="/Login" render={(name) => <Navigate to="/" />} />
-          <Route path="/Register" element={<Register/>} />
-          <Route path="/Product" element={<Product/>} />
-          <Route path="/Product/:id" element={<Product/>} />
-          <Route path="/ProductList" element={<ProductList/>} />
-          <Route path="/ProductList/:category" element={<ProductList/>}/>
-          <Route path="*" element={<Navigate to="/" />}/> 
-        </Routes>
+        <Route exact path="/">
+            <Home/>
+          </Route>
+
+          <Route path="/cart">
+            <Cart/>
+          </Route>
+
+          <Route path="/login">
+            {user ? <Redirect to="/"/> : <Login/>}
+            <Login/>
+          </Route>
+
+          <Route path="/register">
+            {user ? <Redirect to="/"/> : <Register/>}
+          </Route>
+
+          <Route path="/product/:id"> 
+            <Product/>
+          </Route>
+
+          <Route path="/productList/:category">
+            <ProductList/>
+          </Route>
+          
+        </Switch>       
     </Router>
 
   );
