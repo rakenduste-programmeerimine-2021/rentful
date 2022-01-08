@@ -6,29 +6,14 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch} 
+        from "react-router-dom";
+
 
 const App = () => {
   //return <Home/>
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-        <Route path="/products/:category">
-          <ProductList/>
-        </Route>
-        <Route path="/product/:id">
-          <ProductList/>
-        </Route>
-      </Switch>
-    </Router>
-  );
+  return <Home/>;
+
 };
 
 export default App;
