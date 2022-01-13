@@ -6,7 +6,11 @@ import Newsletter from "../components/Newsletter"
 import KeyboardArrowLeftIcon from '../../node_modules/@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '../../node_modules/@material-ui/icons/KeyboardArrowRight';
 import "./style.css";
-
+import React, { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
+import { publicRequest } from "../requestMethods";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 const Container = styled.div``;
 
 const PicturesContainer = styled.div`
@@ -102,13 +106,35 @@ const CompanyMail = styled.div`
 
 `;
 
+const AddToList = styled.button`
 
+`;
 
 
 
 
 
 const Product = () => {
+    const location = useLocation();
+    const id = location.pathname.split("/")[2];
+    const [product, setProduct] = useState({});
+    const [quantity, setQuantity] = useState(1);
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        const getProduct = async ()=>{
+            try{
+                const res = await publicRequest.get("/products/find/"+id);
+                setProduct(res.data);
+            } catch {}
+        };
+        getProduct();
+    },[id])
+
+    const handleClick = ()=>{
+        //Siin uuendame oma vaatenimekirja
+        dispatch(addProduct({product, quantity}));
+        
+    }
     return (
         <Container>
             <Navbar/>
@@ -116,7 +142,7 @@ const Product = () => {
             <PicturesContainer>
                 <KeyboardArrowLeftIcon className="movementArrow"/>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+                    <Image src={product.img} />
                 </ImgContainer>
                 <ImgContainer>
                     <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
@@ -152,6 +178,7 @@ const Product = () => {
                     <CompanyMail>E-Mail: example@epico.ru</CompanyMail>
                 </CompanyContainer>
             </CompanyHolder>
+            <AddToList onClick ={handleClick}>Add to List</AddToList>
             <Footer/>
         </Container>
     )
