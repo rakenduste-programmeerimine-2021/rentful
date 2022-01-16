@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
 const App = () => {
-  const user = useSelector(state=>user.currentUser);
+  const user = useSelector((state) =>state.user.currentUser);
   return (
     <Router>  
         <Switch>
