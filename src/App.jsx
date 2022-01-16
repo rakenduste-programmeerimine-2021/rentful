@@ -4,11 +4,11 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
-
-import { BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
 const App = () => {
-  const user = true;
+  const user = useSelector(state=>user.currentUser);
   return (
     <Router>  
         <Switch>

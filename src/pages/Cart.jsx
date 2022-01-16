@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Add from '../../node_modules/@material-ui/icons/Add'
 import Remove from '../../node_modules/@material-ui/icons/Remove'
+import { useSelector } from "react-redux";
 
 const Container = styled.div``;
 
@@ -109,6 +110,7 @@ font-weight: 200;
 `;
 
 const Cart = () => {
+    const cart = useSelector(state=>state.cart);
     return(
         <Container>
             <Navbar/>
@@ -125,28 +127,25 @@ const Cart = () => {
                 </Top>
                 <Bottom>
                     <Info>
+                        {cart.products.map(product=>( //Iga asja kohta tehakse siin foreach tsükkel
                         <Product>
                             <ProductDetail>
-                                <Image/>
+                                <Image src={product.image}/>
                                 <Details>
-                                    <ProductName><b>Product:</b> YOUR MOM</ProductName>
-                                    <ProductId><b>ID: </b></ProductId>
-                                    <ProductColor color="black"/>
+                                    <ProductName><b>Product:</b> {product.title}</ProductName>
+                                    <ProductId><b>ID: </b> {product._id}</ProductId>
                                 </Details>
                             </ProductDetail>
                             <PriceDetail>
                                 <ProductAmountContainer>
-                                    <Add/>
-                                    <ProductAmount>2</ProductAmount>
                                     <Remove/>
                                 </ProductAmountContainer>
-                                <ProductPrice>$ 50</ProductPrice>
 
                             </PriceDetail>
 
                         </Product>
+                        ))}
                     </Info>
-                    <Summary>summary</Summary>
                 </Bottom>
             </Wrapper>
             <Footer/>

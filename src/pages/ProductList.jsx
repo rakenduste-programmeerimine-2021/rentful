@@ -55,7 +55,7 @@ const ProductList = () => {
         <Container>
             <Navbar/>
             <Announcement/>
-            <Title>Cars</Title>
+            <Title>{category}</Title>
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Cars</FilterText>
@@ -68,7 +68,7 @@ const ProductList = () => {
                     <Select name="year" onChange={selectFilters}>
                         <Option disabled>Year</Option>
                         <Option>2010</Option>
-                        <Option>2015</Option>
+                        <Option>2014</Option>
                         <Option>2020</Option>
                     </Select>
                 
