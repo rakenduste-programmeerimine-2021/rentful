@@ -4,21 +4,34 @@ import React from 'react'
 import styled from 'styled-components'
 import {useSelector } from "react-redux"
 import { Link } from "react-router-dom";
+import './style.css'
 const Container = styled.div`
-height: 60px;
+height: 100px;
+background-color: #A28329;
 `
-
-const Wrapper = styled.div`
-padding: 10px 20px;
+const Container2 = styled.div`
+height: 40px;
+background-color: #575757;
 display: flex;
 justify-content: space-between;
 align-items: center;
+margin-bottom: 20px;
+border-top: 2px solid #404040;
+border-bottom: 2px solid #404040;
+`
+const Wrapper = styled.div`
+height:100px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
 `
 
-const Left = styled.div`
+const Empty = styled.div`
 flex: 1;
 display: flex;
 align-items: center;
+
 `;
 
 const Language = styled.span`
@@ -35,68 +48,116 @@ padding: 5px;
 
 const Input = styled.input`
 border: none;
+
 `
 
 const Center = styled.div`
 flex: 1;
 text-align: center;
+
 `;
 
 const Logo = styled.h1`
 font-weight: bold;
+font-size: 5em;
+
 `
 
 const Right = styled.div`
+
 flex: 1;
 align-items: center;
 display: flex;
-justify-content: flex-end;
+justify-content: center;
+
 `;
 
-const MenuItem = styled.div`
-font-size: 14px;
-cursor: pointer:
-margin-left: 25px;
+const Right2 = styled.div`
+height: 50px;
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+
+`;
+
+const ButtonDiv = styled.div`
+height: 100%;
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+
+`;
+
+const Button = styled.button`
+width: 100%;
+height: 100%;
+font-size: 20px;
+background-color: #C09B31;
+border: 1px solid black;
+border-radius: 5px;
 `
-
-
-
+const Button2 = styled.button`
+ width: 100%;
+ height: 100%;
+ background-color: #989898;
+ border-radius: 5px;
+`;
 
 const Navbar = () => {
     const quantity = useSelector(state=>state.cart.quantity) //siit võtame koguse, mis meil nimekirjas on
     console.log(quantity);
     return (
         <div>
-            <Container> 
+            <Container>
                 <Wrapper>
-                    <Left>
-                        <Language>EN</Language>
-                        <SearchContainer>
-                            <Input/>
-                            <Search style = {{color:"gray", fontSize: 16}}/>
-                        </SearchContainer>
-                    </Left>
+                    <Empty></Empty>
                     <Center>
                         <Logo>Rentful</Logo>
                     </Center>
                     <Right>
-                        <Link to="/register">
-                            <MenuItem>REGISTER</MenuItem>
-                        </Link>
-                        <Link to="/login">
-                            <MenuItem>SIGN IN</MenuItem>
-                        </Link>
-                        <Link to="/cart">
-                            <MenuItem>
-                                <Badge badgeContent={quantity} color="primary">
-                                <ShoppingCartOutlined/>
-                                </Badge>
-                            </MenuItem>
-                        </Link>
+                        <Right2>
+                            <Link className="link" to="/login">
+                                <Button className="button">LOG IN</Button>
+                            </Link>
+                        </Right2>
+                        <Right2>
+                            <Link className="link" to="/register">
+                                <Button className="button">REGISTER</Button>
+                            </Link>
+                        </Right2>
+
+                        <Right2>
+                            <Link className="link3" to="/cart">
+                                <Button className="button">
+                                    <Badge badgeContent={quantity} color="primary">
+                                    <ShoppingCartOutlined/>
+                                    </Badge>
+                                </Button>
+                            </Link>
+                        </Right2>
                     </Right>
                 </Wrapper>
-            
             </Container>
+            <Container2>
+                <ButtonDiv> 
+                    
+                        <Link className="link2" to="/productList/">
+                            <Button2 className="button2">CARS</Button2>
+                        </Link>
+                        <Link className="link2" to="/">
+                            <Button2 className="button2">NEWS</Button2>
+                        </Link>
+                        <Link className="link2" to="/">
+                            <Button2 className="button2">LIST YOUR CARS</Button2>
+                        </Link>
+                        <Link className="link2" to="/">
+                            <Button2 className="button2">OUR SITES</Button2>
+                        </Link>
+
+                    </ButtonDiv>
+            </Container2>
         </div>
     )
 }

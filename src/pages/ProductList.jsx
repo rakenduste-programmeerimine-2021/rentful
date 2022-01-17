@@ -60,7 +60,7 @@ const ProductList = () => {
                 <Filter>
                     <FilterText>Filter Cars</FilterText>
                     <Select name="mark" onChange={selectFilters}>
-                        <Option disabled>Make</Option>
+                        <Option disabled>Mark</Option>
                         <Option>BMW</Option>
                         <Option>Mercedes-Benz</Option>
                         <Option>Toyota</Option>

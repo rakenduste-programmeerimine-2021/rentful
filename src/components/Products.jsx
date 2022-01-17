@@ -28,7 +28,7 @@ const Products = ({category, filters, sort}) => { //Siit algab andmete Fetchimin
     
     useEffect(()=>{
         category && setFilteredProducts(  //See koodijupp kontrollib läbi filtrid ning filtreerib kõik tooted/autod ükshaaval läbi ning toob need visuualselt ette
-            products.filter(item=>
+            products.filter((item) =>
                 Object.entries(filters).every(([key,value]) =>
                 item[key].includes(value)
                 )
@@ -55,9 +55,9 @@ const Products = ({category, filters, sort}) => { //Siit algab andmete Fetchimin
  
     return (
         <Container>
-            {category //Siin on jah/ei, et me saaks näidata koduleheküljel olemasolevaid sõidukeid/tooteid, kuni kaheksa
+            {category//products juures tundub olevat error, ei oska praegu lahendada rida 60 //Siin on jah/ei, et me saaks näidata koduleheküljel olemasolevaid sõidukeid/tooteid, kuni kaheksa
                 ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
-                : products.slice(0, 8).map((item) => <Product item={item} key={item.id} />)}
+                : products.slice(0, 8).map((item) => <Product item={item} key={item.id} />)} 
         </Container>
     )
 }
