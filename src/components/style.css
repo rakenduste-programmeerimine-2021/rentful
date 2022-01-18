@@ -22,3 +22,9 @@
 .button:hover{
     background-color: #DAC483;
 }
+
+.logo{
+    height: 100%;
+    font-weight: bold;
+    font-size: 5em;   
+}

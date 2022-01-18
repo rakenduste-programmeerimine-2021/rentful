@@ -3,8 +3,7 @@ import Announcement from "../components/Announcement"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Newsletter from "../components/Newsletter"
-import KeyboardArrowLeftIcon from '../../node_modules/@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '../../node_modules/@material-ui/icons/KeyboardArrowRight';
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
 import "./style.css";
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
@@ -17,7 +16,7 @@ const PicturesContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: pink;
+background-color: white;
 padding: 10px;
 `;
 const ImgContainer = styled.div`
@@ -36,6 +35,8 @@ padding: 0px 50px;
 `;
 const Title = styled.h1`
 font-weight: 200;
+font-weight: bold;
+margin-left: 5vw;
 `;
 const Desc = styled.p`
 margin: 20px 0px;
@@ -52,7 +53,7 @@ margin-top: 40px;
 
 
 const EquipmentContainer = styled.div`
-background-color: teal;
+background-color: #D2D2D2;
 width: 85vw;
 text-align: center;
 border: 5px solid black;
@@ -71,7 +72,7 @@ margin-top: 40px;
 `;
 
 const OwnerContainer = styled.div`
-background-color: lime;
+background-color: #D2D2D2;
 width: 85vw;
 text-align: center;
 border: 5px solid black;
@@ -89,7 +90,7 @@ width: 40vw;
 `;
 
 const CompanyContainer = styled.div`
-background-color: lightblue;
+background-color: #D2D2D2;
 width: 25vw;
 text-align: center;
 border: 5px solid black;
@@ -109,7 +110,6 @@ const CompanyMail = styled.div`
 const AddToList = styled.button`
 
 `;
-
 
 
 
@@ -138,19 +138,19 @@ const Product = () => {
     return (
         <Container>
             <Navbar/>
-            <Announcement/>
+            <Title>sdsadasdss</Title>
             <PicturesContainer>
-                <KeyboardArrowLeftIcon className="movementArrow"/>
+                <ArrowLeftOutlined className="movementArrow"/>
                 <ImgContainer>
                     <Image src={product.img} />
                 </ImgContainer>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+                    <Image src={product.img} />
                 </ImgContainer>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+                    <Image src={product.img} />
                 </ImgContainer>
-                <KeyboardArrowRightIcon className="movementArrow"/>
+                <ArrowRightOutlined className="movementArrow"/>
             </PicturesContainer>
 
             <EquipmentHolder>
