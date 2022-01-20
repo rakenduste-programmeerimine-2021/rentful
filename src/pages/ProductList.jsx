@@ -36,8 +36,8 @@ const Option = styled.option`
 //Saame omale automargi
 const ProductList = () => {
     const location = useLocation();
-    const category = location.pathname.split("/")[2]
-    const [filters, setFilters] = useState({}) // filtrite loomine
+    const category = location.pathname.split("/")[2] 
+    const [filters, setFilters] = useState([]) // filtrite loomine
     const [sort, setSort] = useState("newest")
 
 
@@ -59,14 +59,17 @@ const ProductList = () => {
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Cars</FilterText>
-                    <Select name="mark" onChange={selectFilters}>
-                        <Option disabled>Mark</Option>
-                        <Option>BMW</Option>
-                        <Option>Mercedes-Benz</Option>
-                        <Option>Toyota</Option>
+                    <Select name="color" onChange={selectFilters}>
+                        <Option disabled selected>Color</Option>
+                        <Option>Black</Option>
+                        <Option>White</Option>
+                        <Option>Gray</Option>
+                        <Option>Blue</Option>
+                        <Option>Red</Option>
+                        <Option>Yellow</Option>
                     </Select>
                     <Select name="year" onChange={selectFilters}>
-                        <Option disabled>Year</Option>
+                        <Option disabled selected>Year</Option>
                         <Option>2010</Option>
                         <Option>2014</Option>
                         <Option>2020</Option>

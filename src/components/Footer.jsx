@@ -65,7 +65,7 @@ margin-bottom: 10px;
 
 const Footer = () => {
     return (
-        <Container>
+        <Container className="footer">
             <Left>
                 <Logo>Rentful</Logo>
                 <Desc>

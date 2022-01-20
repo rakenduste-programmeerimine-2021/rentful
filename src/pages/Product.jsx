@@ -136,7 +136,7 @@ const Product = () => {
         
     }
     return (
-        <Container>
+        <Container className="productPage">
             <Navbar/>
             <Title>sdsadasdss</Title>
             <PicturesContainer>

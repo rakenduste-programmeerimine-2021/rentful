@@ -30,6 +30,7 @@ const Products = ({category, filters, sort}) => { //Siit algab andmete Fetchimin
         category && setFilteredProducts(  //See koodijupp kontrollib läbi filtrid ning filtreerib kõik tooted/autod ükshaaval läbi ning toob need visuualselt ette
             products.filter((item) =>
                 Object.entries(filters).every(([key,value]) =>
+
                 item[key].includes(value)
                 )
             )  
