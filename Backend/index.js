@@ -30,6 +30,13 @@ mongoose
   app.use("/api/orders", orderRoute);
   app.use("/api/checkout", stripeRoute);
   app.use("/", require("./routes/upload"));
+
+  app.use(express.static(path.join(__dirname, "/Frontend/build")));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/Frontend/build', 'index.html'));
+  });
+
   app.listen(process.env.PORT || 5000, () => {
     console.log("Backend server is running!");
   });
