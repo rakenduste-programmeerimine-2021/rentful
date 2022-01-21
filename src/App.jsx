@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
+import Upload from "./pages/Upload";
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
@@ -37,7 +38,9 @@ const App = () => {
           <Route path="/productList/:category">
             <ProductList/>
           </Route>
-          
+          <Route path="/upload">
+            <Upload/>
+          </Route>
         </Switch>       
     </Router>
 

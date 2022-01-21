@@ -42,8 +42,8 @@ position: absolute;
 `;
 
 const Image = styled.img`
-height: 75%;
-width: 75%;
+height: 100%;
+width: 100%;
 z-index: 2;
 object-fit: cover;
 `;
@@ -70,19 +70,22 @@ const Product = ({item}) => {
         <Container>
             <Circle/>
             <Image src={item.img}/>
-            <Info>
-                <Icon>
-                    <ShoppingCartOutlined/>
-                </Icon>
-                <Icon>
-                    <Link to={`/product/${item._id}`} /> 
-                    <SearchOutlined/>
-                </Icon>
-                <Icon>
-                    <FavoriteBorderOutlined/>
-                </Icon>
-            </Info>
+            <Link to={`/product/${item._id}`}>
+                <Info>
+                    <Icon>
+                        <ShoppingCartOutlined/>
+                    </Icon>
+                    <Icon> 
+                        <SearchOutlined/>
+                    </Icon>
+                    <Icon>
+                        <FavoriteBorderOutlined/>
+                    </Icon>
+                </Info>
+
+            </Link>
             
+               
         </Container>
     )
 }

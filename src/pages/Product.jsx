@@ -20,8 +20,8 @@ background-color: white;
 padding: 10px;
 `;
 const ImgContainer = styled.div`
-width: 25vw;
-height: 25vh;
+width: 40vw;
+height: 40vh;
 border: 2px solid black;
 `;
 const Image = styled.img`
@@ -140,25 +140,18 @@ const Product = () => {
             <Navbar/>
             <Title>sdsadasdss</Title>
             <PicturesContainer>
-                <ArrowLeftOutlined className="movementArrow"/>
+
                 <ImgContainer>
                     <Image src={product.img} />
                 </ImgContainer>
-                <ImgContainer>
-                    <Image src={product.img} />
-                </ImgContainer>
-                <ImgContainer>
-                    <Image src={product.img} />
-                </ImgContainer>
-                <ArrowRightOutlined className="movementArrow"/>
+
             </PicturesContainer>
 
             <EquipmentHolder>
                 <EquipmentContainer>
-                    <EquipmentTitle>Car Equipment</EquipmentTitle>
+                    <EquipmentTitle>Car description</EquipmentTitle>
                     <Equipment>
-                        <EquipmentText>Here is equipment of le car you are looking at very gut yes</EquipmentText>
-                        <EquipmentText>owo what's this</EquipmentText>
+                        <EquipmentText>{product.desc}</EquipmentText>
                     </Equipment>
                 </EquipmentContainer>
             </EquipmentHolder>

@@ -130,7 +130,7 @@ const Cart = () => {
                         {cart.products.map(product=>( //Iga asja kohta tehakse siin foreach tsükkel
                         <Product>
                             <ProductDetail>
-                                <Image src={product.image}/>
+                                <Image src={product.img}/>
                                 <Details>
                                     <ProductName><b>Product:</b> {product.title}</ProductName>
                                     <ProductId><b>ID: </b> {product._id}</ProductId>
@@ -138,6 +138,7 @@ const Cart = () => {
                             </ProductDetail>
                             <PriceDetail>
                                 <ProductAmountContainer>
+                                {product.price + "€"}
                                     <Remove/>
                                 </ProductAmountContainer>
 

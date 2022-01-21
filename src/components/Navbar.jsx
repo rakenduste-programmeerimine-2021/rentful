@@ -142,14 +142,10 @@ const Navbar = () => {
             </Container>
             <Container2>
                 <ButtonDiv> 
-                    
-                        <Link className="link2" to="/productList/">
-                            <Button2 className="button2">CARS</Button2>
-                        </Link>
                         <Link className="link2" to="/">
-                            <Button2 className="button2">NEWS</Button2>
+                            <Button2 className="button2">HOME PAGE</Button2>
                         </Link>
-                        <Link className="link2" to="/">
+                        <Link className="link2" to="/upload">
                             <Button2 className="button2">LIST YOUR CARS</Button2>
                         </Link>
                         <Link className="link2" to="/">

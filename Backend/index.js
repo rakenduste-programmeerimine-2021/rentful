@@ -16,7 +16,7 @@ dotenv.config();
 
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log("DB Connection Successfull!"))
+  .then(() => console.log(process.env.MONGO_URL))
   .catch((err) => {
     console.log(err);
   });
@@ -29,7 +29,7 @@ mongoose
   app.use("/api/carts", cartRoute);
   app.use("/api/orders", orderRoute);
   app.use("/api/checkout", stripeRoute);
-
+  app.use("/", require("./routes/upload"));
   app.listen(process.env.PORT || 5000, () => {
     console.log("Backend server is running!");
   });
