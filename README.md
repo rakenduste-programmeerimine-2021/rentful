@@ -27,6 +27,9 @@ Adminid saavad autosid autosid nimekirjast maha võtta, uusi teavitusi teha ning
 - Autode broneerimine makse meetodil kasutajana
 - Administraatori kasutaja
 - Kasutaja poolne autode lisamine
+
+
+P.S. Deployment jäi tegemata kuna Heroku keeldus koodi üles laadimast kõige viimases etapis. Muidu on kood täielikult valmis Deploymentiks.
 - Administraatori poolne autode kustutamine
 - Administraatori suhtlus auto omanikuga ja rentnikuga
 - E Maili teavitused auto broneerimise, rentimise alustamise ja rentimise lõpetamise kohta. Lisaks ka teavitus, kui auto rentimiseks andmise taotlus on kas vastu võetud või tagasi lükatud.
