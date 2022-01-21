@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 height: 60vh;
-background-color: lightgreen;
+background-color: #575757;
 display: flex;
 align-items: center;
 justify-content: center;
